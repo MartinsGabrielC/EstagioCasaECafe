@@ -11,8 +11,11 @@ def opportunitiesCount(ID):
     print(len(j_obj))
 
 try:
+    #id enviado como argumento do script
 	ID = sys.argv[1]
+    #chamada da funcao com o id recebido
 	opportunitiesCount(ID)
+#caso nao haja id como argumento
 except IndexError:
 	print("Error: Enviar ID como argumento")
 	sys.exit()
