@@ -1,3 +1,4 @@
+# encoding utf-8
 import requests
 import json
 import sys
@@ -5,7 +6,11 @@ import sys
 def opportunitiesCount(ID):
     #criacao do get
     url = "http://ec2-35-164-139-210.us-west-2.compute.amazonaws.com/hirers/"+ID+"/opportunities"
-    html = requests.get(url)
+    try:
+        html = requests.get(url)
+    except:
+        print("Erro: Servidor não pode ser acessado")
+        sys.exit()
     #criacao de um objeto json para decodificacao
     j_obj = json.loads(html.text)
     print(len(j_obj))
@@ -17,5 +22,5 @@ try:
 	opportunitiesCount(ID)
 #caso nao haja id como argumento
 except IndexError:
-	print("Error: Enviar ID como argumento")
+	print("Erro: Enviar ID como argumento")
 	sys.exit()

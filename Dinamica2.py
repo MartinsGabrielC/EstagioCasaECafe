@@ -1,6 +1,7 @@
 # encoding: utf-8
 import requests
 import datetime
+import sys
 
 def postOpportunitie():
     #Url a ser enviado os dados
@@ -56,7 +57,11 @@ def postOpportunitie():
     data['relevancy']=input("relevancy ")
 
     #envio dos dados para o servidor
-    html = requests.post(url,json=data)
+    try:
+        html = requests.post(url,json=data)
+    except :
+        print("Erro: Servidor não pode ser acessado")
+        sys.exit()
     #caso o envio nao tenha retornado erros
     if(html.ok):
         print("Vaga Adicionada")
