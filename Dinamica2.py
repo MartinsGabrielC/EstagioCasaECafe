@@ -5,7 +5,7 @@ import sys
 
 def postOpportunitie():
     #Url a ser enviado os dados
-    url = "http://ec2-35-164-139-210.us-west-2.compute.amazonaws.com/opportunities"
+    url = "http://ec2-35-164-223-211.us-west-2.compute.amazonaws.com/opportunities"
     #ciacao do dicionario que recebera todos os dados a serem enviados
     data = {}
     #dados do contratante sao definidos fixo

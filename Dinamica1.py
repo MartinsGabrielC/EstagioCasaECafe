@@ -5,7 +5,7 @@ import sys
 
 def opportunitiesCount(ID):
     #criacao do get
-    url = "http://ec2-35-164-139-210.us-west-2.compute.amazonaws.com/hirers/"+ID+"/opportunities"
+    url = "http://ec2-35-164-223-211.us-west-2.compute.amazonaws.com/hirers/"+ID+"/opportunities"
     try:
         html = requests.get(url)
     except:
